@@ -1,0 +1,30 @@
+export const color = {
+  darkPastelGreen: '#43c43e',
+  greyishBrown: '#4a4a4a',
+  grayBlue: '#4a90e2',
+  orangeyYellow: '#f5a623',
+  darkMint: '#41bf6b',
+  lightBlueGrey: '#bfcbde',
+  blueGrey: '#7b8dab',
+  textColorModalWindow: '#323642',
+  lightGreyBlue: '#a4b3ca',
+  grapefruit: '#f15d5d',
+  grey: '#3a465a',
+  lightGrey: '#4b576c',
+  mediumGrey: '#2d3747',
+  darkGrey: '#202938',
+  blue: '#4e95fe',
+  lightPeriwinkle: '#d9e0ed',
+  veryLightBlue: '#eaedf3',
+  aqua: '#17d1c8',
+  light: '#fff',
+  inputBorder: '#9eb8d6',
+  selectedBox: '#515b6e',
+  inputPlaceholder: '#4d5d77',
+  green: '#42f477',
+  darkGreen: '#248c43',
+
+  //own
+  lightBlue: '#c5dbff',
+  lightGreen: '#badaa9'
+};

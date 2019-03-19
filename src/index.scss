@@ -1,3 +1,13 @@
 
-@import './shared/styles/layouts' 
+@import './shared/styles/layouts';
+@import url('https://fonts.googleapis.com/css?family=Mukta');
 
+body {
+  font-family: 'Mukta', sans-serif;
+  margin: 0;
+  padding: 0
+}
+
+a {
+  text-decoration: none;
+}

@@ -6,7 +6,7 @@ import { Close } from '@material-ui/icons';
 
 import withStyles from '@material-ui/core/styles/withStyles';
 
-const styles = ({colors, layout}) => ({
+const styles = ({color, layout}) => ({
   container: {
     //alignItems: 'center',
     marginBottom: 10,
@@ -17,16 +17,16 @@ const styles = ({colors, layout}) => ({
     justifyContent: 'flex-end'
   },
   closeBtn: {
-    backgroundColor: colors.grapefruit,
-    color: colors.white,
+    backgroundColor: color.grapefruit,
+    color: color.white,
     padding: '2px 5px',
     borderRadius: 2,
     fontSize: 10
   },
   disabled: {
-    backgroundColor: colors.lightPeriwinkle
+    backgroundColor: color.lightPeriwinkle
   }
-})
+});
 
 const TranslationItem = ({name, onChange, value, onRemove, disabled, classes, index}) => {
   return (
@@ -37,13 +37,13 @@ const TranslationItem = ({name, onChange, value, onRemove, disabled, classes, in
           className={classes.closeBtn} 
           onClick={onRemove}
           classes={{disabled: classes.disabled}}
-          > 
+        > 
           <Close/>
         </Button>
       </div>
       <Input name={name} onChange={onChange} value={value}/>
     </div>
-  )
-}
+  );
+};
 
-export default withStyles(styles)(TranslationItem)
+export default withStyles(styles)(TranslationItem);

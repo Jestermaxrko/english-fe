@@ -1,9 +1,10 @@
 import axios from 'axios';
+import baseURL from '../const/base-url';
 
 const httpService = {
   get: (url, params, cancel) => {
     return new Promise((resolve, reject) => {
-      axios(url, {
+      axios(`${baseURL}/${url}`, {
         method: 'GET',
         headers: getHeaders(url),
         params: params,
@@ -17,7 +18,7 @@ const httpService = {
   },
   post: (url, params, cancel) => {
     return new Promise((resolve, reject) => {
-      axios(url, {
+      axios(`${baseURL}/${url}`, {
         method: 'POST',
         headers: getHeaders(url),
         data: params,
@@ -32,7 +33,7 @@ const httpService = {
   },
   put: (url, params, cancel) => {
     return new Promise((resolve, reject) => {
-      axios(url, {
+      axios(`${baseURL}/${url}`, {
         method: 'PUT',
         headers: getHeaders(url),
         data: params,
@@ -46,7 +47,7 @@ const httpService = {
   },
   delete: (url, params, cancel) => {
     return new Promise((resolve, reject) => {
-      axios(url, {
+      axios(`${baseURL}/${url}`, {
         method: 'DELETE',
         headers: getHeaders(url),
         data: params,
@@ -65,6 +66,5 @@ function getHeaders(url) {
   let headers = mapboxRequest ? {'Content-Type': 'application/json'} : {'Client-Device': 'web', 'Content-Type': 'application/json'};
   return headers;
 }
-
 
 export default httpService;

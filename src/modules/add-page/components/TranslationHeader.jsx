@@ -5,24 +5,24 @@ import { Add } from '@material-ui/icons';
 
 import withStyles from '@material-ui/core/styles/withStyles';
 
-const styles = ({colors, layout}) => ({
+const styles = ({color, layout}) => ({
   container: {
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingBottom: 10,
-    borderBottom: `2px solid ${colors.lightPeriwinkle}`,
+    borderBottom: `2px solid ${color.lightPeriwinkle}`,
     margin: '10px 0',
     ...layout.row
   },
   button: {
-    backgroundColor: colors.green,
+    backgroundColor: color.green,
     marginLeft: 5,
-    color: colors.white,
+    color: color.white,
     '&:hover': {
-      backgroundColor: colors.darkGreen
+      backgroundColor: color.darkGreen
     }
   },
-})
+});
 
 const TranslationHeader = ({ onAdd, classes }) => (
   <div className={classes.container}>
@@ -33,6 +33,6 @@ const TranslationHeader = ({ onAdd, classes }) => (
       <Add/> 
     </Button>
   </div>
-)
+);
 
-export default withStyles(styles)(TranslationHeader)
+export default withStyles(styles)(TranslationHeader);
