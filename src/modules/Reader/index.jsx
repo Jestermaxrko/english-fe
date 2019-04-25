@@ -25,7 +25,6 @@ const Reader = ({ classes, ...props }) => {
   const [words, setWords] = useState([]);
   const [showOriginal, setShowOriginal] = useState(true);
 
-
   useEffect(() => {
     getAllWords();
   }, []);
@@ -37,12 +36,13 @@ const Reader = ({ classes, ...props }) => {
   const onChangeLanguage = () => setShowOriginal(!showOriginal);
 
   return (
-    <div className={props.words.length ? classes.fullContainer : classes.container}>
+    <div className={props.words && props.words.length ? classes.fullContainer : classes.container}>
       <WordListHeader onChangeLanguage={onChangeLanguage} />
 
       {words.map(word => {
         return (
           <WordsList
+            
             original={showOriginal ? word.original || word.english : word.translation}
             translation={showOriginal ? word.translation[0] : word.original || word.english}
           />

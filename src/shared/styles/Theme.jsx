@@ -5,6 +5,42 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { color } from './color';
 
 const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
+
+  breakpoints: {
+    // Define custom breakpoint values.
+    // These will apply to Material-UI components that use responsive
+    // breakpoints, such as `Grid` and `Hidden`. You can also use the
+    // theme breakpoint functions `up`, `down`, and `between` to create
+    // media queries for these breakpointsun
+    values: {
+      xs: 0,
+      sm: 768,
+      md: 960,
+      lg: 1280,
+      xl: 1920
+    }
+  },
+
+  overrides: {
+    MuiButton: { // Name of the component ⚛️ / style sheet
+      text: { // Name of the rule
+        color: color.dark, // Some CSS
+        fontWeight: 600
+      },
+      contained: {
+        // primary: {
+        //   // color: '#32353a'
+        //   color: '#fff'
+        // },
+        // color: `${color.light}!important`,
+        fontWeight: 600,
+        boxShadow: 'none'
+      },
+    },
+  },
 
   layout: {
     row: {
@@ -22,7 +58,7 @@ const theme = createMuiTheme({
   color,
   palette: {
     primary: {
-      main: '#ffcd50',
+      main: '#5a95e6',
       // contrastText: will be calculated to contrast with palette.primary.main
     },
     secondary: {
@@ -32,12 +68,12 @@ const theme = createMuiTheme({
       // contrastText: '#ffcc00',
     },
     action: {
-      disabledBackground: '#ffd77388'
+      disabledBackground: '#9da7b4'
     },
     // error: will use the default color
 
     //custom colors
-    
+
   },
 });
 

@@ -4,7 +4,7 @@ import { months } from '../../../const/date';
 
 import withStyles from '@material-ui/core/styles/withStyles';
 
-const styles = ({ color }) => ({
+const styles = () => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',

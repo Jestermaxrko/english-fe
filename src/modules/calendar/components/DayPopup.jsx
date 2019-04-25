@@ -1,18 +1,14 @@
 import React, { Fragment } from 'react';
 
-import Popover from '@material-ui/core/Popover';
-
-import moment from 'moment';
 import withStyles from '@material-ui/core/styles/withStyles';
 
 import Day from './Day';
-import { days } from '../../../const/date';
 import Modal from '../../../shared/elements/ModalWindow/index';
 import { useModal } from '../../../shared/elements/ModalWindow/useModal';
 
 import Reader from '../../Reader';
 
-const styles = ({ color, layout }) => ({
+const styles = () => ({
 
 });
 
@@ -31,7 +27,7 @@ const DayPopover = ({ date, words, count }) => {
         <Reader words={words || []}/>
       </Modal>
     </Fragment>
-  )
+  );
 };
 
 export default withStyles(styles)(DayPopover);

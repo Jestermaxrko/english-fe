@@ -28,7 +28,7 @@ const styles = ({color, layout}) => ({
   }
 });
 
-const TranslationItem = ({name, onChange, value, onRemove, disabled, classes, index}) => {
+const TranslationItem = ({name, onChange, value, onRemove, disabled, classes }) => {
   return (
     <div className={classes.container}>
       <div className={classes.closeBtnContainer}>

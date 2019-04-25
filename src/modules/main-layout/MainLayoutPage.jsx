@@ -1,12 +1,22 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import AddPage from '../add-page';
-import Calendar from '../calendar';
-import Reader from '../Reader';
-
-import Header from './Header';
-
+import React, { Fragment } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import withStyles from '@material-ui/core/styles/withStyles';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
+
+import Header from '../Header';
+import Dictionaries from '../Dictionaries';
+import Spinner from '../../shared/elements/Spinner';
+
+const ME_QUERY = gql`
+{
+ me {
+   id
+   firstname
+   lastname
+ }
+}
+`;
 
 const styles = {
   container: {
@@ -14,21 +24,40 @@ const styles = {
     overflow: 'hidden'
   },
   content: {
-    height: 'calc(100vh - 55px)',
-    overflow: 'auto'
+    height: '100vh',
+    overflow: 'auto',
+    position: 'relative'
   }
 };
 
 const MainLayout = ({ classes }) => {
-  return <div className={classes.container}>
-    <Header />
-    <div className={classes.content}>
-      <Route path='/add' component={AddPage} />
-      <Route path='/calendar' component={Calendar} />
-      <Route path='/words' component={Reader} />
-    </div>
 
-  </div>;
+  if (!window.localStorage.token) {
+    return <Redirect to='/auth/sign-in' />;
+  }
+
+  return (
+    <div className={classes.container}>
+      <Query query={ME_QUERY}>
+        {({ loading, error }) => {
+          if (loading) return <Spinner />;
+          if (error) return <Redirect to='/auth/sign-in' />;
+          return (
+            <Fragment>
+              <Header />
+              <div className={classes.content}>
+                <Switch>
+                  <Route path='/dictionaries' component={Dictionaries} />
+                  <Redirect to="/dictionaries" />
+                </Switch>
+              </div>
+            </Fragment>
+          );
+        }}
+      </Query>
+    </div>
+  );
 };
 
 export default withStyles(styles)(MainLayout);
+

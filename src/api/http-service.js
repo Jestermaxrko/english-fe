@@ -61,10 +61,12 @@ const httpService = {
   }
 };
 
-function getHeaders(url) {
-  let mapboxRequest = url.includes('directions');
-  let headers = mapboxRequest ? {'Content-Type': 'application/json'} : {'Client-Device': 'web', 'Content-Type': 'application/json'};
-  return headers;
+function getHeaders() {
+  return {
+    'Client-Device': 'web',
+    'Content-Type': 'application/json',
+    // 'Authorization': `Bearer ${window.localStorage.getItem('token')}`
+  };
 }
 
 export default httpService;

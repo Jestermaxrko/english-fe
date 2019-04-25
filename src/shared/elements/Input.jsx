@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React  from 'react';
+import { connect, getIn, ErrorMessage } from 'formik';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import withStyles from '@material-ui/core/styles/withStyles';
@@ -9,24 +10,24 @@ const styles = ({ color }) => ({
     border: `1px solid ${color.blue}`,
     padding: 5,
     height: 42,
-    boxSizing: 'border-box'
-  }  
+    boxSizing: 'border-box',
+  }
 });
 
-const AppInput = ({ classes, onChange,value, name, label }) => (
-  <Fragment>
+const AppInput = ({ classes, onChange, value, name, label, formik }) => (
+  <div className='flex-column' style={{ margin: '10px 0' }}>
     <InputLabel htmlFor={name}>{label}</InputLabel>
-    <Input  
+    <Input
       id={name}
       name={name}
-      value={value}
-      onChange={onChange}
+      value={getIn(formik.values, name) || value}
+      onChange={formik.handleChange || onChange}
+      onBlur={formik.handleBlur}
       disableUnderline
-      classes={{
-        root: classes.root
-      }}
+      classes={classes}
     />
-  </Fragment>
+    <ErrorMessage name={name}/>
+  </div>
 );
 
-export default withStyles(styles)(AppInput);
+export default connect(withStyles(styles)(AppInput));

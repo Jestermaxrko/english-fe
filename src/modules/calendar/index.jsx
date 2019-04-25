@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import moment from 'moment';
 
-import { getDaysInMonth, isIsoStringsEqual } from '../../shared/services/utils';
+import { getDaysInMonth } from '../../shared/services/utils';
 
 import { getAll } from '../../api/days-api';
 

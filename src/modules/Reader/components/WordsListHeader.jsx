@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React  from 'react';
 
 import LanguageSwitcher from './LanguageSwitcher';
 import withStyles from '@material-ui/core/styles/withStyles';

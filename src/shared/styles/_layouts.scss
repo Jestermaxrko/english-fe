@@ -24,5 +24,65 @@
   &-align-end {
     align-items: flex-end
   }
+}
 
+.capitalize {
+  text-transform: capitalize;
+}
+
+.relative {
+  position: relative
+}
+
+.full-width {
+  width: 100%
+};
+
+.full-height {
+  height: 100%;
+}
+
+.modal {
+  &--form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  };
+
+  &--content {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 250px;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+}
+
+.margin-right {
+  margin-right: 15px
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }

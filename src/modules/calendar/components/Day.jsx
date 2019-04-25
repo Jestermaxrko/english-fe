@@ -37,12 +37,6 @@ const Day = ({ date, classes, count, onClick }) => {
 
   const onDayClick = () => count && onClick();
 
-  const arr = [[1,2], [1,2]];
-
-  const sum = arr.reduce((acc, row) => acc + row.reduce((acc2, item) => acc2 + item, 0) , 0)
-
-    console.log(sum);
-
   return (
     <div onClick={onDayClick} className={`${classes.container} ${today && classes.today}`}>
       <div className='flex-row flex-align-center'>

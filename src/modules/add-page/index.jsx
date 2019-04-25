@@ -1,11 +1,9 @@
-import React, { Component, Fragment, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 
 import Input from '../../shared/elements/Input';
 import Button from '@material-ui/core/Button';
 import withStyles from '@material-ui/core/styles/withStyles';
 import { Formik, Form, FieldArray, getIn } from 'formik';
-
-import http from '../../api/http-service';
 
 import TranslationItem from './components/TranslationItem';
 import TranslationHeader from './components/TranslationHeader';
@@ -13,7 +11,7 @@ import { wordSchema as validationSchema } from '../../const/validationSchemas';
 
 import { addWord } from '../../api/words-api';
 
-const styles = ({ color, layout, breakpoints }) => ({
+const styles = ({ breakpoints }) => ({
   form: {
     width: '50%',
     margin: 'auto',
@@ -49,7 +47,7 @@ const AddPage = ({ classes }) => {
       onSubmit={(values, { resetForm }) => {
         onSubmit(values, resetForm);
       }}
-      render={({ handleChange, values, handleSubmit, errors }) => (
+      render={({ handleChange, values, handleSubmit }) => (
 
         <Form className={classes.form}>
 
