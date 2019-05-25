@@ -45,7 +45,7 @@ const Dictionary = ({ classes, match }) => {
             return (
               <Fragment>
                 <DictionaryTabs/>
-                <DictionaryHeader wordsCount={words.length} dictionaryId={match.params.id} />
+                <DictionaryHeader wordsCount={words.length} from={from} dictionaryId={match.params.id} />
                 <WordList from={from} to={to} words={words} dictionaryId={match.params.id}/>
               </Fragment>
             );

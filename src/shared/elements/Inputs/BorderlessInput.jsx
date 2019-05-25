@@ -11,6 +11,7 @@ const styles = () => ({
   root: {
     border: 'none',
     borderBottom: '1px solid #ccc',
+    padding: '5px 0',
   }
 });
 

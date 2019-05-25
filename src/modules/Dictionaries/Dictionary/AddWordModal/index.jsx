@@ -62,7 +62,7 @@ const styles = ({ breakpoints, color }) => ({
 
 });
 
-const AddDictionaryModal = ({ classes, dictionaryId }) => {
+const AddDictionaryModal = ({ classes, dictionaryId, from }) => {
   const [open, handleAction] = useModal();
 
   return (
@@ -88,7 +88,7 @@ const AddDictionaryModal = ({ classes, dictionaryId }) => {
 
       <ModalWindow open={open} onClose={handleAction}>
         <ModalHeader title='Add Word' onClose={handleAction} />
-        <AddWordContent onClose={handleAction} dictionaryId={dictionaryId} />
+        <AddWordContent onClose={handleAction} dictionaryId={dictionaryId} from={from}/>
       </ModalWindow>
 
     </Fragment>

@@ -1,10 +1,11 @@
 import { ApolloClient } from 'apollo-client';
-import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { setContext } from 'apollo-link-context';
 
 import { url as uri } from './base-url';
 import gql from 'graphql-tag';
+import { createUploadLink } from 'apollo-upload-client';
+import { ApolloLink } from 'apollo-link';
 
 export const typeDefs = gql`
   type WordsFilter {
@@ -17,7 +18,7 @@ export const typeDefs = gql`
   }
 `;
 
-const httpLink = createHttpLink({ uri });
+const uploadLink = createUploadLink({ uri });
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('token');
@@ -31,12 +32,14 @@ const authLink = setContext((_, { headers }) => {
 
 const cache = new InMemoryCache();
 
+const link = ApolloLink.from([authLink, uploadLink]);
+
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link,
   cache,
   typeDefs,
   resolvers: {
-    Query : {
+    Query: {
       wordsFilter: parent => parent,
       WordsFilter: {
         sort: parent => parent.sort,
@@ -47,12 +50,12 @@ const client = new ApolloClient({
   }
 });
 
-const initState = { 
-  wordsFilter: { 
+const initState = {
+  wordsFilter: {
     sort: -12,
     filter: [],
     query: '',
-    __typename: 'WordsFilter' 
+    __typename: 'WordsFilter'
   }
 };
 

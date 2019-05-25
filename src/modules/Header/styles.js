@@ -20,7 +20,6 @@ export const styles = ({ color, breakpoints }) => ({
     color: '#fff',
     backgroundColor: color.primary,
     transition: 'background-color 0.5s ease',
-    borderRight: '1px solid #90929a',
     '&:hover': {
       // opacity: 0.7,
       backgroundColor: color.darkPrimary,
@@ -28,8 +27,8 @@ export const styles = ({ color, breakpoints }) => ({
     }
   },
   activeLink: {
-    backgroundColor: color.orange,
-    color: color.primary,
+    borderBottom: `4px solid ${color.orange}`,
+    color: color.light,
     '&:hover': {
       backgroundColor: color.darkOrange,
       transition: 'background-color 0.5s ease',

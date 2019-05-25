@@ -26,18 +26,21 @@ const theme = createMuiTheme({
 
   overrides: {
     MuiButton: { // Name of the component ⚛️ / style sheet
+      root: {
+        minWidth: 100,
+      },
       text: { // Name of the rule
         color: color.dark, // Some CSS
         fontWeight: 600
       },
       contained: {
-        // primary: {
-        //   // color: '#32353a'
-        //   color: '#fff'
-        // },
-        // color: `${color.light}!important`,
         fontWeight: 600,
-        boxShadow: 'none'
+        boxShadow: 'none',
+        color: color.light,
+        borderRadius: 2,
+      },
+      fullWidth: {
+        width: '100%'
       },
     },
   },

@@ -2,8 +2,8 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import withStyles from '@material-ui/core/styles/withStyles';
 import NavBar from './NavBar';
-import { ExitToApp } from '@material-ui/icons';
-import Button from '@material-ui/core/Button';
+
+import HeaderMenu from './HeaderMenu';
 
 const styles = ({ color }) => ({
   header: {
@@ -25,22 +25,12 @@ const styles = ({ color }) => ({
   }
 });
 
-const Header = ({ classes, history }) => {
-  const logOut = () => {
-    window.localStorage.clear();
-    history.push('/auth/sign-in');
-  };
+const Header = ({ classes }) => {
 
   return (
     <div className={classes.header}>
       <NavBar />
-
-      <div onClick={logOut}>
-        <Button classes={{ label: classes.buttonLabel }}>
-          Logout <ExitToApp className={classes.logOutIcon}/>
-        </Button>
-      </div>
-
+      <HeaderMenu/>
     </div>
   );
 };

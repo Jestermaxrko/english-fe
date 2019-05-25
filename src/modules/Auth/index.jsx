@@ -26,7 +26,7 @@ const Auth = ({ classes, match }) => {
       <Query query={ME_QUERY}>
         {({ loading, data }) => {
           if (loading) return <Spinner/>;
-          if (data) return <Redirect to='/' />;
+          if (data && data.me) return <Redirect to='/' />;
           return (
             <Switch>
               <Route exact path={`${match.path}/sign-up`} component={SignUp} />

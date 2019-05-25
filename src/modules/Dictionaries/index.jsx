@@ -17,10 +17,6 @@ const Dictionaries = ( ) => {
       <div className='full-width'>
 
         <Switch>
-          <Route exact path={'/dictionaries/:id/words'} component={Dictionary} />
-        </Switch>
-
-        <Switch>
           {/* <Route exact path='/dictionaries' component={() => <div>HEllo</div>}/> */}
           <Route exact path='/dictionaries/new' component={AddDictionary} />
 

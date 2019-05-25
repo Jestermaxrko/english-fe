@@ -26,7 +26,7 @@ const Input = ({ classes, onChange, value, name, placeholder, type, Icon, formik
     fullWidth
     disableUnderline
     startAdornment={
-      <InputAdornment Icon={Icon}/>
+      Icon && <InputAdornment Icon={Icon}/>
     }
     classes={classes} />
 );

@@ -21,10 +21,10 @@ const styles = ({ breakpoints }) => ({
   },
 });
 
-const DictionaryHeader = ({ classes, wordsCount, dictionaryId }) => {
+const DictionaryHeader = ({ classes, wordsCount, dictionaryId, from }) => {
   return (
     <div className={classes.container}>
-      <AddWordModal dictionaryId={dictionaryId} />
+      <AddWordModal from={from} dictionaryId={dictionaryId} />
       <WordSearch wordsCount={wordsCount}/>
       <WordsFilter/>
     </div>

@@ -6,14 +6,19 @@ import gql from 'graphql-tag';
 
 import Header from '../Header';
 import Dictionaries from '../Dictionaries';
+import Profile from '../Profile';
+
 import Spinner from '../../shared/elements/Spinner';
 
 const ME_QUERY = gql`
 {
  me {
    id
+   nickname
    firstname
    lastname
+   avatar
+   email
  }
 }
 `;
@@ -24,7 +29,7 @@ const styles = {
     overflow: 'hidden'
   },
   content: {
-    height: '100vh',
+    height: 'calc(100vh - 55px)',
     overflow: 'auto',
     position: 'relative'
   }
@@ -48,6 +53,7 @@ const MainLayout = ({ classes }) => {
               <div className={classes.content}>
                 <Switch>
                   <Route path='/dictionaries' component={Dictionaries} />
+                  <Route path='/profile' component={Profile} />
                   <Redirect to="/dictionaries" />
                 </Switch>
               </div>

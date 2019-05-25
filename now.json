@@ -3,7 +3,7 @@
 {
   "version": 2,
   "name": "language-app",
-  "alias": "dictionary.now.sh",
+  "alias": "lang-helper.now.sh",
   "builds": [
     {"src": "package.json", "use": "@now/static-build", "config": {"distDir": "build"}}
   ],

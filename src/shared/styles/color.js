@@ -27,7 +27,7 @@ export const color = {
 
   // color pallete
 
-  primary: '#5c648c',
+  primary: '#4a7880',
   orange: '#f7b464',
   darkOrange: '#c58940',
   darkPrimary: '#484f71',
@@ -44,4 +44,5 @@ export const color = {
   blue: '#4e95fe',
   lightBlue: '#d3e6f9'
   // blue #c7cce2
+  //ddeef1
 };

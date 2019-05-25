@@ -11,7 +11,7 @@ import InputError from '../../../../shared/elements/Inputs/InputError';
 
 import CategorySelect from './CategorySelect';
 
-const AddWordContent = ({ onClose, dictionaryId }) => {
+const AddWordContent = ({ onClose, dictionaryId, from }) => {
 
   const updateWords = (store, { data: { createWord } }) => {
     const { dictionary } = store.readQuery({ query: DICTIONARY_QUERY, variables: { id: dictionaryId } });
@@ -50,7 +50,7 @@ const AddWordContent = ({ onClose, dictionaryId }) => {
             <Form className='modal--form'>
               <div className='modal--content'>
                 <div className='full-width'>
-                  <Input label='Word' name='word' />
+                  <Input label={`Word (${from})`} name='word' />
                   <CategorySelect />
                 </div>
 

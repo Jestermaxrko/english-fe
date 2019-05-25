@@ -4,9 +4,11 @@ export const ME_QUERY = gql`
 {
  me {
    id
-   nickname,
+   nickname
    firstname
    lastname
+   avatar
+   email
  }
 }
 `;
