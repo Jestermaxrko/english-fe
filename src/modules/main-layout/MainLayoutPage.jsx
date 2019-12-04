@@ -9,6 +9,8 @@ import Dictionaries from '../Dictionaries';
 import Profile from '../Profile';
 
 import Spinner from '../../shared/elements/Spinner';
+import Games from '../Games';
+import PlayGame from '../PlayGame';
 
 const ME_QUERY = gql`
 {
@@ -53,6 +55,8 @@ const MainLayout = ({ classes }) => {
               <div className={classes.content}>
                 <Switch>
                   <Route path='/dictionaries' component={Dictionaries} />
+                  <Route path='/games' component={Games} />
+                  <Route path='/play-game' component={PlayGame} />
                   <Route path='/profile' component={Profile} />
                   <Redirect to="/dictionaries" />
                 </Switch>

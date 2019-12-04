@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import withStyles from '@material-ui/core/styles/withStyles';
 import IconButton from '@material-ui/core/IconButton';
 import BookOutlined from '@material-ui/icons/BookOutlined';
+import GamesIcon from '@material-ui/icons/GamepadOutlined';
 import { withApollo } from 'react-apollo';
 
 import { styles } from './styles';
@@ -11,6 +12,10 @@ const menuItems = [
   {
     icon: BookOutlined,
     title: 'dictionaries'
+  },
+  {
+    icon: GamesIcon,
+    title: 'games'
   },
 ];
 
