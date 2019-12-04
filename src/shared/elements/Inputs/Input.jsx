@@ -14,7 +14,7 @@ export const styles = ({ color }) => ({
   },
 });
 
-const Input = ({ classes, onChange, value, name, placeholder, type, Icon, formik }) => (
+const Input = ({ classes, onChange, value, name, placeholder, type, Icon, formik, onKeyPress }) => (
   <MUIInput
     id={name}
     name={name}
@@ -25,8 +25,9 @@ const Input = ({ classes, onChange, value, name, placeholder, type, Icon, formik
     type={type || 'text'}
     fullWidth
     disableUnderline
+    onKeyPress={onKeyPress}
     startAdornment={
-      Icon && <InputAdornment Icon={Icon}/>
+      Icon && <InputAdornment Icon={Icon} />
     }
     classes={classes} />
 );
